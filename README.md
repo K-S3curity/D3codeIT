@@ -36,6 +36,6 @@ This project is [GNU GPLv3](https://gnu.org) licensed.
 
 ## ToDo
 
-Add multiple other encoding formats
-Add multiple other hash formats
-Add hash cracking feature
+* Add multiple other encoding formats
+* Add multiple other hash formats
+* Add hash cracking feature
