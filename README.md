@@ -1,6 +1,6 @@
 # Welcome to D3codeIT 👋
 ![Version](https://img.shields.io/badge/version-1.0-blue.svg?cacheSeconds=2592000)
-![License: GNU GPLv3](https://img.shields.io/badge/License-GNU GPLv3-yellow.svg)](https://gnu.org)
+[![License: GNU GPLv3](https://img.shields.io/badge/License-GNU/GPLv3-yellow.svg)](https://gnu.org)
 
 > D3codeIT is a script that let you decode encoding schemes like Base64 or Base32. It's also supports hashing text to some hashing formats like SHA1 or SHA256.
 
