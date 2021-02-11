@@ -23,8 +23,19 @@ Give a ⭐️ if this project helped you!
 
 ## 📝 License
 
-Copyright © 2021 [K-S3curity](https://github.com/K-S3curity).
-
 This project is [GNU GPLv3](https://gnu.org) licensed.
 
+© 2021 [K-S3curity](https://github.com/K-S3curity).
+
 ***
+
+## Changelog
+
+11/02/2021 : Created Repository
+             Released the 1.0 version
+
+## ToDo
+
+Add multiple other encoding formats
+Add multiple other hash formats
+Add hash cracking feature
