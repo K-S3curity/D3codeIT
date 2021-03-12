@@ -6,7 +6,7 @@ import os
 #----------------------Functions----------------------
 #Encode in Base64
 def choice_one():
-    string = input("Enter your text :")
+    string = input("Enter your text : ")
     str_ascii = string.encode('ascii')
     b64_encoded = base64.b64encode(str_ascii)
     result = b64_encoded.decode('ascii')
