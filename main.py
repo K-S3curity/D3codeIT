@@ -12,6 +12,7 @@ def choice_one():
     result = b64_encoded.decode('ascii')
     print("The Base64 string is : ")
     print(result)
+    choice = int(input("Type a number from the list above =>  "))
 #Decode Base64
 def choice_two():
     string = input("Enter the your Base64 string : ")
@@ -19,6 +20,7 @@ def choice_two():
     result = b64_decoded.decode('ascii')
     print("The decoded Base64 string is : ")
     print(result)
+    choice = int(input("Type a number from the list above =>  "))
 
 def invalid():
     print("Invalid Choice !")
@@ -47,6 +49,7 @@ def choice_one_32():
     result = b32_encoded.decode('ascii')
     print("The Base32 string is : ")
     print(result)
+    choice = int(input("Type a number from the list above =>  "))
 #Decode Base64
 def choice_two_32():
     string = input("Enter the your Base32 string : ")
@@ -54,6 +57,7 @@ def choice_two_32():
     result = b32_decoded.decode('ascii')
     print("The decoded Base32 string is : ")
     print(result)
+    choice = int(input("Type a number from the list above =>  "))
 
 def invalid_32():
     print("Invalid Choice !")
@@ -71,6 +75,7 @@ def base32_menu() :
     while choice_base32 == 0 or choice_base32 >= 3 :
         invalid_32()
         choice_base32
+    choice = int(input("Type a number from the list above =>  "))
 
 
 
@@ -82,6 +87,17 @@ def encode_sha1():
     result = hashlib.sha1(text.encode())
     print("The SHA1 hash is : ")
     print(result.hexdigest())
+    choice = int(input("Type a number from the list above =>  "))
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~SHA224~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#Encode to SHA224
+def encode_sha224():
+    text = str(input("Enter the text you want to hash in SHA224 format : "))
+    result = hashlib.sha224(text.encode())
+    print("The SHA224 hash is : ")
+    print(result.hexdigest())
+    choice = int(input("Type a number from the list above =>  "))
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~SHA256~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #Encode to SHA256
@@ -90,6 +106,17 @@ def encode_sha256():
     result = hashlib.sha256(text.encode())
     print("The SHA256 hash is : ")
     print(result.hexdigest())
+    choice = int(input("Type a number from the list above =>  "))
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~SHA384~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#Encode to SHA384
+def encode_sha384():
+    text = str(input("Enter the text you want to hash in SHA384 format : "))
+    result = hashlib.sha384(text.encode())
+    print("The SHA384 hash is : ")
+    print(result.hexdigest())
+    choice = int(input("Type a number from the list above =>  "))
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~SHA512~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #Encode to SHA256
@@ -98,6 +125,7 @@ def encode_sha512():
     result = hashlib.sha512(text.encode())
     print("The SHA512 hash is : ")
     print(result.hexdigest())
+    choice = int(input("Type a number from the list above =>  "))
     
 #----------------------------------------------------------------------------------------------------------------------
 #--------------------------------------------------------Script--------------------------------------------------------
@@ -120,11 +148,7 @@ print('''
 888    888 888    888 888     888  888 888  888 88888888  888       888     
 888  .d88P Y88b  d88P Y88b.   Y88..88P Y88b 888 Y8b.      888       888     
 8888888P"   "Y8888P"   "Y8888P "Y88P"   "Y88888  "Y8888 8888888     888     
-                                                                            
-                                                                            
-                                                                            
-                                                                   
-                                                                              
+
 ''')
 #Say Hi
 print("Hi !")
@@ -133,11 +157,13 @@ def menu() :
     print("1 - Base64 Encode/Decode")
     print("2 - Base32 Encode/Decode")
     print("3 - SHA1 Encode")
-    print("4 - SHA256 Encode")
-    print("5 - SHA512 Encode")
+    print("4 - SHA224 Encode")
+    print("5 - SHA256 Encode")
+    print("6 - SHA384 Encode")
+    print("7 - SHA512 Encode")
 
 menu()
-choice = int(input("Type 1 / 2 / 3 / 4 / 5 =>  "))
+choice = int(input("Type a number from the list above =>  "))
 
 if choice == 1:
     base64_menu()
@@ -146,10 +172,16 @@ if choice == 2:
 if choice == 3:
     encode_sha1()
 if choice == 4:
-    encode_sha256()
+    encode_sha224()
 if choice == 5:
+    encode_sha256()
+if choice == 6:
+    encode_sha384()
+if choice == 7:
     encode_sha512()
-while choice == 0 or choice >= 6:
+
+
+while choice == 0 or choice >= 8:
     print("Invalid choice !")
     menu()
-    choice = int(input("Type 1 / 2 / 3 / 4 / 5 =>  "))
+    choice = int(input("Type a number from the list above =>  "))
