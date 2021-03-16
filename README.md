@@ -33,6 +33,8 @@ This project is [GNU GPLv3](https://gnu.org) licensed.
 
 11/02/2021 : Created Repository
              Released the 1.0 version
+14/03/2021 : Updated repository :
+             Added SHA224, SHA384 and MD5 hashing algorithms
 
 ## ToDo
 
