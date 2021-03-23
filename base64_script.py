@@ -7,15 +7,13 @@ def choice1():
     str_ascii = string.encode('ascii')
     b64_encoded = base64.b64encode(str_ascii)
     result = b64_encoded.decode('ascii')
-    print("The Base64 string is :")
-    print(result)
+    print("The Base64 string is : ", result)
 #Decode Base64
 def choice2():
     string = input("Enter the your Base64 string :")
     b64_decoded = base64.b64decode(string)
     result = b64_decoded.decode('ascii')
-    print("The decoded Base64 string is :")
-    print(result)
+    print("The decoded Base64 string is : ", result)
 
 def invalid():
     print("Invalid Choice !")

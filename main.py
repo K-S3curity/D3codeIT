@@ -11,16 +11,14 @@ def choice_one():
     str_ascii = string.encode('ascii')
     b64_encoded = base64.b64encode(str_ascii)
     result = b64_encoded.decode('ascii')
-    print("The Base64 string is : ")
-    print(result)
+    print("The Base64 string is : ", result)
     choice = int(input("Type a number from the list above =>  "))
 #Decode Base64
 def choice_two():
     string = input("Enter the your Base64 string : ")
     b64_decoded = base64.b64decode(string)
     result = b64_decoded.decode('ascii')
-    print("The decoded Base64 string is : ")
-    print(result)
+    print("The decoded Base64 string is : ", result)
     choice = int(input("Type a number from the list above =>  "))
 
 def invalid():
@@ -48,16 +46,14 @@ def choice_one_32():
     str_ascii = string.encode('ascii')
     b32_encoded = base64.b32encode(str_ascii)
     result = b32_encoded.decode('ascii')
-    print("The Base32 string is : ")
-    print(result)
+    print("The Base32 string is : ", result)
     choice = int(input("Type a number from the list above =>  "))
 #Decode Base64
 def choice_two_32():
     string = input("Enter the your Base32 string : ")
     b32_decoded = base64.b32decode(string)
     result = b32_decoded.decode('ascii')
-    print("The decoded Base32 string is : ")
-    print(result)
+    print("The decoded Base32 string is : ", result)
     choice = int(input("Type a number from the list above =>  "))
 
 def invalid_32():
@@ -86,8 +82,7 @@ def base32_menu() :
 def encode_sha1():
     text = str(input("Enter the text you want to hash in SHA1 format : "))
     result = hashlib.sha1(text.encode())
-    print("The SHA1 hash is : ")
-    print(result.hexdigest())
+    print("The SHA1 hash is : ", result.hexdigest())
     choice = int(input("Type a number from the list above =>  "))
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~SHA224~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -96,8 +91,7 @@ def encode_sha1():
 def encode_sha224():
     text = str(input("Enter the text you want to hash in SHA224 format : "))
     result = hashlib.sha224(text.encode())
-    print("The SHA224 hash is : ")
-    print(result.hexdigest())
+    print("The SHA224 hash is : ", result.hexdigest())
     choice = int(input("Type a number from the list above =>  "))
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~SHA256~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -105,8 +99,7 @@ def encode_sha224():
 def encode_sha256():
     text = str(input("Enter the text you want to hash in SHA256 format : "))
     result = hashlib.sha256(text.encode())
-    print("The SHA256 hash is : ")
-    print(result.hexdigest())
+    print("The SHA256 hash is : ", result.hexdigest())
     choice = int(input("Type a number from the list above =>  "))
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~SHA384~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -115,8 +108,7 @@ def encode_sha256():
 def encode_sha384():
     text = str(input("Enter the text you want to hash in SHA384 format : "))
     result = hashlib.sha384(text.encode())
-    print("The SHA384 hash is : ")
-    print(result.hexdigest())
+    print("The SHA384 hash is : ", result.hexdigest())
     choice = int(input("Type a number from the list above =>  "))
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~SHA512~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -124,8 +116,7 @@ def encode_sha384():
 def encode_sha512():
     text = str(input("Enter the text you want to hash in SHA512 format : "))
     result = hashlib.sha512(text.encode())
-    print("The SHA512 hash is : ")
-    print(result.hexdigest())
+    print("The SHA512 hash is : ", result.hexdigest())
     choice = int(input("Type a number from the list above =>  "))
 
 
@@ -134,8 +125,7 @@ def encode_sha512():
 def encode_md5():
     text = str(input("Enter the text you want to hash in MD5 format : "))
     result = hashlib.md5(text.encode())
-    print("The MD5 hash is : ")
-    print(result.hexdigest())
+    print("The MD5 hash is : ", result.hexdigest())
     choice = int(input("Type a number from the list above =>  "))
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~MD5~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -144,8 +134,7 @@ def encode_bcrypt():
     text = str(input("Enter the text you want to hash in Bcrypt format : "))
     str_ascii = text.encode('ascii')
     result = bcrypt.hashpw(str_ascii, bcrypt.gensalt())
-    print("The Bcrypt hash is : ")
-    print(result)
+    print("The Bcrypt hash is : ", result)
     choice = int(input("Type a number from the list above =>  "))
 #----------------------------------------------------------------------------------------------------------------------
 #--------------------------------------------------------Script--------------------------------------------------------

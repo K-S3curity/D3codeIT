@@ -8,15 +8,13 @@ def choice_one_32():
     str_ascii = string.encode('ascii')
     b32_encoded = base64.b32encode(str_ascii)
     result = b32_encoded.decode('ascii')
-    print("The Base32 string is : ")
-    print(result)
+    print("The Base32 string is : ", result)
 #Decode Base64
 def choice_two_32():
     string = input("Enter the your Base32 string : ")
     b32_decoded = base64.b32decode(string)
     result = b32_decoded.decode('ascii')
-    print("The decoded Base32 string is : ")
-    print(result)
+    print("The decoded Base32 string is : ", result)
 
 def invalid_32():
     print("Invalid Choice !")

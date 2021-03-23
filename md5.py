@@ -4,8 +4,6 @@ import hashlib
 def encode_md5():
     text = str(input("Enter the text you want to hash in MD5 format : "))
     result = hashlib.md5(text.encode())
-    print("The MD5 hash is : ")
-    print(result.hexdigest())
-    choice = int(input("Type a number from the list above =>  "))
+    print("The MD5 hash is : ", result.hexdigest())
 
 encode_md5()
