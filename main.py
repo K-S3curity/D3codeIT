@@ -2,6 +2,7 @@
 import base64
 import hashlib
 import os
+import bcrypt
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Base64~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #----------------------Functions----------------------
 #Encode in Base64
@@ -137,7 +138,15 @@ def encode_md5():
     print(result.hexdigest())
     choice = int(input("Type a number from the list above =>  "))
 
-
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~MD5~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#Encode to Bcrypt
+def encode_bcrypt():
+    text = str(input("Enter the text you want to hash in Bcrypt format : "))
+    str_ascii = text.encode('ascii')
+    result = bcrypt.hashpw(str_ascii, bcrypt.gensalt())
+    print("The Bcrypt hash is : ")
+    print(result)
+    choice = int(input("Type a number from the list above =>  "))
 #----------------------------------------------------------------------------------------------------------------------
 #--------------------------------------------------------Script--------------------------------------------------------
 
@@ -173,6 +182,7 @@ def menu() :
     print("6 - SHA384 Encode")
     print("7 - SHA512 Encode")
     print("8 - MD5 Encode")
+    print("9 - Bcrypt Encode")
 
 menu()
 choice = int(input("Type a number from the list above =>  "))
@@ -193,9 +203,11 @@ if choice == 7:
     encode_sha512()
 if choice == 8:
     encode_md5()
+if choice == 9:
+    encode_bcrypt()
 
 
-while choice == 0 or choice >= 9:
+while choice == 0 or choice >= 10:
     print("Invalid choice !")
     menu()
     choice = int(input("Type a number from the list above =>  "))
