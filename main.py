@@ -3,6 +3,41 @@ import base64
 import hashlib
 import os
 import bcrypt
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Base85~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#----------------------Functions----------------------
+#Encode in Base85
+def choice_one_85():
+    string = input("Enter your text : ")
+    str_ascii = string.encode('ascii')
+    b85_encoded = base64.b85encode(str_ascii)
+    result = b85_encoded.decode('ascii')
+    print("The Base85 string is : ", result)
+    choice = int(input("Type a number from the list above =>  "))
+#Decode Base85
+def choice_two_85():
+    string = input("Enter the your Base85 string : ")
+    b85_decoded = base64.b85decode(string)
+    result = b85_decoded.decode('ascii')
+    print("The decoded Base85 string is : ", result)
+    choice = int(input("Type a number from the list above =>  "))
+
+def invalid():
+    print("Invalid Choice !")
+    print("Type 1 to encode a string to Base85")
+    print("Type 2 to decode a Base85 string")
+
+def base85_menu() :
+    print("1 - Encode a string to Base85")
+    print("2 - Decode a Base85 string")
+    choice_base85 = int(input("Type 1 /2 =>  "))
+    if choice_base85 == 1:
+        choice_one_85()
+    if choice_base85 == 2:
+        choice_two_85()
+    while choice_base85 == 0 or choice_base85 >= 3 :
+        invalid()
+        choice_base85
+
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Base64~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #----------------------Functions----------------------
 #Encode in Base64
@@ -72,6 +107,42 @@ def base32_menu() :
     while choice_base32 == 0 or choice_base32 >= 3 :
         invalid_32()
         choice_base32
+    choice = int(input("Type a number from the list above =>  "))
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Base16~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#----------------------Functions----------------------
+#Encode in Base16
+def choice_one_16():
+    string = input("Enter your text : ")
+    str_ascii = string.encode('ascii')
+    b16_encoded = base64.b16encode(str_ascii)
+    result = b16_encoded.decode('ascii')
+    print("The Base16 string is : ", result)
+    choice = int(input("Type a number from the list above =>  "))
+#Decode Base16
+def choice_two_16():
+    string = input("Enter the your Base16 string : ")
+    b16_decoded = base64.b16decode(string)
+    result = b16_decoded.decode('ascii')
+    print("The decoded Base16 string is : ", result)
+    choice = int(input("Type a number from the list above =>  "))
+
+def invalid_16():
+    print("Invalid Choice !")
+    print("Type 1 to encode a string to Base16")
+    print("Type 2 to decode a Base16 string")
+
+def base16_menu() :
+    print("1 - Encode a string to Base16")
+    print("2 - Decode a Base16 string")
+    choice_base16 = int(input("Type 1 /2 =>  "))
+    if choice_base16 == 1:
+        choice_one_16()
+    if choice_base16 == 2:
+        choice_two_16()
+    while choice_base16 == 0 or choice_base16 >= 3 :
+        invalid_16()
+        choice_base16
     choice = int(input("Type a number from the list above =>  "))
 
 
@@ -163,40 +234,45 @@ print('''
 print("Hi !")
 #Choose encoding mode
 def menu() :
-    print("1 - Base64 Encode/Decode")
-    print("2 - Base32 Encode/Decode")
-    print("3 - SHA1 Encode")
-    print("4 - SHA224 Encode")
-    print("5 - SHA256 Encode")
-    print("6 - SHA384 Encode")
-    print("7 - SHA512 Encode")
-    print("8 - MD5 Encode")
-    print("9 - Bcrypt Encode")
+    print("1 - Base85 Encode/Decode")
+    print("2 - Base64 Encode/Decode")
+    print("3 - Base32 Encode/Decode")
+    print("4 - Base16 Encode/Decode")
+    print("5 - SHA1 Encode")
+    print("6 - SHA224 Encode")
+    print("7 - SHA256 Encode")
+    print("8 - SHA384 Encode")
+    print("9 - SHA512 Encode")
+    print("10 - MD5 Encode")
+    print("11 - Bcrypt Encode")
 
 menu()
 choice = int(input("Type a number from the list above =>  "))
 
 if choice == 1:
+    base85_menu()
+elif choice == 2:
     base64_menu()
-if choice == 2:
+elif choice == 3:
     base32_menu()
-if choice == 3:
+elif choice == 4:
+    base16_menu()
+elif choice == 5:
     encode_sha1()
-if choice == 4:
+elif choice == 6:
     encode_sha224()
-if choice == 5:
+elif choice == 7:
     encode_sha256()
-if choice == 6:
+elif choice == 8:
     encode_sha384()
-if choice == 7:
+elif choice == 9:
     encode_sha512()
-if choice == 8:
+elif choice == 10:
     encode_md5()
-if choice == 9:
+elif choice == 11:
     encode_bcrypt()
 
-
-while choice == 0 or choice >= 10:
+else :
     print("Invalid choice !")
     menu()
     choice = int(input("Type a number from the list above =>  "))
